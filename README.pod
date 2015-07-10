@@ -1,0 +1,72 @@
+=pod
+
+=head1 NAME
+
+Web::Starch::Store::DBIxConnector - Session storage backend using DBIx::Connector.
+
+=head1 SYNOPSIS
+
+    my $starch = Web::Starch->new(
+        store => {
+            class => '::DBIxConnector',
+            connector => [
+                $dsn,
+                $username,
+                $password,
+                { RaiseError=>1, AutoCommit=>1 },
+            ],
+            table => 'my_sessions',
+        },
+    );
+
+=head1 DESCRIPTION
+
+This Starch store uses L<DBIx::Connector> to set and get session data.
+
+Very little is documented in this module as it is just a subclass
+of L<Web::Starch::Store::DBI> modified to use L<DBIx::Connector>
+instead of L<DBI>.
+
+=head1 REQUIRED ARGUMENTS
+
+=head2 connector
+
+This must be set to either an array ref arguments for L<DBIx::Connector>
+or a pre-built object (often retrieved using a method proxy).
+
+When configuring Starch from static configuration files using a
+L<method proxy|Web::Starch::Manual/METHOD PROXIES>
+is a good way to link your existing L<DBIx::Connector> object
+constructor in with Starch so that starch doesn't build its own.
+
+=head1 METHODS
+
+=head2 set
+
+Set L<Web::Starch::Store/set>.
+
+=head2 get
+
+Set L<Web::Starch::Store/get>.
+
+=head2 remove
+
+Set L<Web::Starch::Store/remove>.
+
+=head1 AUTHOR
+
+Aran Clary Deltac <bluefeetE<64>gmail.com>
+
+=head1 ACKNOWLEDGEMENTS
+
+Thanks to L<ZipRecruiter|https://www.ziprecruiter.com/>
+for encouraging their employees to contribute back to the open
+source ecosystem.  Without their dedication to quality software
+development this distribution would not exist.
+
+=head1 LICENSE
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=cut
