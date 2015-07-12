@@ -1,4 +1,4 @@
-/Starch-Store-DBIxConnector*
+/Starch-Store-DBIx-Connector*
 /.build
 *.swp
 /test.db

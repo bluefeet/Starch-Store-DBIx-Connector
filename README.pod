@@ -2,13 +2,13 @@
 
 =head1 NAME
 
-Starch::Store::DBIxConnector - Session storage backend using DBIx::Connector.
+Starch::Store::DBIx::Connector - Session storage backend using DBIx::Connector.
 
 =head1 SYNOPSIS
 
     my $starch = Starch->new(
         store => {
-            class => '::DBIxConnector',
+            class => '::DBIx::Connector',
             connector => [
                 $dsn,
                 $username,

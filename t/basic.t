@@ -10,7 +10,7 @@ unlink( $db_file ) if -f $db_file;
 my $tester = Test::Starch->new(
     args => {
         store => {
-            class  => '::DBIxConnector',
+            class  => '::DBIx::Connector',
             connector => [
                 'dbi:SQLite:dbname=test.db',
                 '',
