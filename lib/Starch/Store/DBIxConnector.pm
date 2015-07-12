@@ -1,12 +1,12 @@
-package Web::Starch::Store::DBIxConnector;
+package Starch::Store::DBIxConnector;
 
 =head1 NAME
 
-Web::Starch::Store::DBIxConnector - Session storage backend using DBIx::Connector.
+Starch::Store::DBIxConnector - Session storage backend using DBIx::Connector.
 
 =head1 SYNOPSIS
 
-    my $starch = Web::Starch->new(
+    my $starch = Starch->new(
         store => {
             class => '::DBIxConnector',
             connector => [
@@ -24,7 +24,7 @@ Web::Starch::Store::DBIxConnector - Session storage backend using DBIx::Connecto
 This Starch store uses L<DBIx::Connector> to set and get session data.
 
 Very little is documented in this module as it is just a subclass
-of L<Web::Starch::Store::DBI> modified to use L<DBIx::Connector>
+of L<Starch::Store::DBI> modified to use L<DBIx::Connector>
 instead of L<DBI>.
 
 =cut
@@ -37,7 +37,7 @@ use Moo;
 use strictures 2;
 use namespace::clean;
 
-extends 'Web::Starch::Store::DBI';
+extends 'Starch::Store::DBI';
 
 sub BUILD {
   my ($self) = @_;
@@ -56,7 +56,7 @@ This must be set to either an array ref arguments for L<DBIx::Connector>
 or a pre-built object (often retrieved using a method proxy).
 
 When configuring Starch from static configuration files using a
-L<method proxy|Web::Starch::Manual/METHOD PROXIES>
+L<method proxy|Starch::Manual/METHOD PROXIES>
 is a good way to link your existing L<DBIx::Connector> object
 constructor in with Starch so that starch doesn't build its own.
 
@@ -88,15 +88,15 @@ sub _build_connector {
 
 =head2 set
 
-Set L<Web::Starch::Store/set>.
+Set L<Starch::Store/set>.
 
 =head2 get
 
-Set L<Web::Starch::Store/get>.
+Set L<Starch::Store/get>.
 
 =head2 remove
 
-Set L<Web::Starch::Store/remove>.
+Set L<Starch::Store/remove>.
 
 =cut
 
