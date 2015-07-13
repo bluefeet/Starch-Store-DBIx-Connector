@@ -56,7 +56,7 @@ This must be set to either an array ref arguments for L<DBIx::Connector>
 or a pre-built object (often retrieved using a method proxy).
 
 When configuring Starch from static configuration files using a
-L<method proxy|Starch::Manual/METHOD PROXIES>
+L<method proxy|Starch/METHOD PROXIES>
 is a good way to link your existing L<DBIx::Connector> object
 constructor in with Starch so that starch doesn't build its own.
 
