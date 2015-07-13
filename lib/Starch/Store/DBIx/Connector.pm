@@ -21,7 +21,7 @@ Starch::Store::DBIx::Connector - Session storage backend using DBIx::Connector.
 
 =head1 DESCRIPTION
 
-This Starch store uses L<DBIx::Connector> to set and get session data.
+This L<Starch> store uses L<DBIx::Connector> to set and get session data.
 
 Very little is documented in this module as it is just a subclass
 of L<Starch::Store::DBI> modified to use L<DBIx::Connector>
