@@ -2,7 +2,7 @@ package Starch::Store::DBIx::Connector;
 
 =head1 NAME
 
-Starch::Store::DBIx::Connector - Session storage backend using DBIx::Connector.
+Starch::Store::DBIx::Connector - Starch storage backend using DBIx::Connector.
 
 =head1 SYNOPSIS
 
@@ -15,13 +15,13 @@ Starch::Store::DBIx::Connector - Session storage backend using DBIx::Connector.
                 $password,
                 { RaiseError=>1, AutoCommit=>1 },
             ],
-            table => 'my_sessions',
+            table => 'my_states',
         },
     );
 
 =head1 DESCRIPTION
 
-This L<Starch> store uses L<DBIx::Connector> to set and get session data.
+This L<Starch> store uses L<DBIx::Connector> to set and get state data.
 
 Very little is documented in this module as it is just a subclass
 of L<Starch::Store::DBI> modified to use L<DBIx::Connector>
@@ -84,6 +84,39 @@ sub _build_connector {
     return DBIx::Connector->new( @$connector );
 }
 
+=head1 OPTIONAL ARGUMENTS
+
+=head2 method
+
+The L<DBIx::Connector> method to call when executing queries.
+Must be one of C<run>, C<txn>, or C<svp>.  Defaults to C<run>.
+
+=cut
+
+has method => (
+    is      => 'ro',
+    isa     => Enum['run', 'txn', 'svp'],
+    default => 'run',
+);
+
+=head2 mode
+
+The L<connection mode|DBIx::Connector/Connection Modes> to use
+when running the L</method>.  Defaults to C<undef> which lets
+L<DBIx::Connector> use whichever mode it has been configured to use.
+Must be on of C<ping>, C<fixup>, C<no_ping>, or C<undef>.
+
+Typically you will not want to set this as you will have provided
+a pre-built L<DBIx::Connector> object, using a method proxy, which
+you've already called L<DBIx::Connector/mode> on.
+
+=cut
+
+has mode => (
+    is => 'ro',
+    isa => Enum['ping', 'fixup', 'no_ping'] | Undef,
+);
+
 =head1 METHODS
 
 =head2 set
@@ -108,11 +141,16 @@ sub dbh { $dbh }
 around qw( set get remove ) => sub{
     my ($orig, $self, @args) = @_;
 
-    return $self->connector->txn(sub{
-        local $dbh = $_;
+    my $method = $self->method();
+    my $mode = $self->mode();
 
-        return $self->$orig( @args );
-    });
+    return $self->connector->$method(
+        defined($mode) ? ($mode) : (),
+        sub{
+            local $dbh = $_;
+            return $self->$orig( @args );
+        },
+    );
 };
 
 1;
