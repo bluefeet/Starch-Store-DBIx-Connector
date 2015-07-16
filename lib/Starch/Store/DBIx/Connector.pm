@@ -64,7 +64,7 @@ constructor in with Starch so that starch doesn't build its own.
 
 
 has '+_dbh_arg' => (
-    isa      => InstanceOf[ 'DBIx::Connector' ] | ArrayRef,
+    isa      => (InstanceOf[ 'DBIx::Connector' ]) | ArrayRef,
     init_arg => 'connector',
     reader   => '_connector_arg',
 );
@@ -114,7 +114,7 @@ you've already called L<DBIx::Connector/mode> on.
 
 has mode => (
     is => 'ro',
-    isa => Enum['ping', 'fixup', 'no_ping'] | Undef,
+    isa => (Enum['ping', 'fixup', 'no_ping']) | Undef,
 );
 
 =head1 METHODS
