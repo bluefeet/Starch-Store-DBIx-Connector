@@ -1,4 +1,5 @@
-requires 'Starch::Store::DBI'      => 0.05;
+requires 'Starch'                  => 0.05;
+requires 'Starch::Store::DBI'      => 0.02;
 requires 'DBIx::Connector'         => 0.53;
 requires 'strictures'              => 2.000000;
 requires 'namespace::clean'        => 0.24;
