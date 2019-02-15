@@ -1,5 +1,7 @@
 package Starch::Store::DBIx::Connector;
 
+$Starch::Store::DBIx::Connector::VERSION = '0.02';
+
 =head1 NAME
 
 Starch::Store::DBIx::Connector - Starch storage backend using DBIx::Connector.
