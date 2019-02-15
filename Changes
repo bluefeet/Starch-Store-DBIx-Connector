@@ -4,6 +4,7 @@ Revision history for Perl extension Starch-Store-DBIx-Connector.
 
  - Properly extend the BUILD method.
  - Migrate build tooling from Dist::Zilla to Minilla.
+ - Migrate all the tests from Test::More to Test2::V0.
 
 0.02 2015-07-21
 

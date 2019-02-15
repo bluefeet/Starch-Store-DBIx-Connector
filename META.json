@@ -43,21 +43,20 @@
       "runtime" : {
          "requires" : {
             "DBIx::Connector" : "0.53",
-            "Moo" : "2",
+            "Moo" : "2.000000",
             "Scalar::Util" : "0",
-            "Starch" : "0.05",
+            "Starch" : "0.10",
             "Starch::Store::DBI" : "0.02",
             "Type::Tiny" : "1.000005",
             "namespace::clean" : "0.24",
-            "strictures" : "2"
+            "strictures" : "2.000000"
          }
       },
       "test" : {
          "requires" : {
             "DBD::SQLite" : "1.46",
             "JSON" : "2",
-            "Test::Fatal" : "0",
-            "Test::Simple" : "0.96"
+            "Test2::V0" : "0.000094"
          }
       }
    },
