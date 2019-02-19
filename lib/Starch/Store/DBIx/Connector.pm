@@ -1,6 +1,6 @@
 package Starch::Store::DBIx::Connector;
 
-$Starch::Store::DBIx::Connector::VERSION = '0.03';
+our $VERSION = '0.03';
 
 =head1 NAME
 
