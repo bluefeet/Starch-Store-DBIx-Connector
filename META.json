@@ -49,6 +49,7 @@
             "Starch::Store::DBI" : "0.03",
             "Type::Tiny" : "1.000005",
             "namespace::clean" : "0.24",
+            "perl" : "5.008001",
             "strictures" : "2.000000"
          }
       },
