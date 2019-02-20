@@ -1,5 +1,6 @@
 package Starch::Store::DBIx::Connector;
-
+use 5.008001;
+use strictures 2;
 our $VERSION = '0.03';
 
 =head1 NAME
@@ -36,7 +37,6 @@ use Types::Standard -types;
 use Scalar::Util qw( blessed );
 
 use Moo;
-use strictures 2;
 use namespace::clean;
 
 extends 'Starch::Store::DBI';
