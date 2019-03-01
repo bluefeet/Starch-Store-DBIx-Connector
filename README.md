@@ -134,7 +134,7 @@ Starch-Store-DBIx-Connector GitHub issue tracker:
 
 [https://github.com/bluefeet/Starch-Store-DBIx-Connector/issues](https://github.com/bluefeet/Starch-Store-DBIx-Connector/issues)
 
-# AUTHOR
+# AUTHORS
 
 Aran Clary Deltac <bluefeet@gmail.com>
 
