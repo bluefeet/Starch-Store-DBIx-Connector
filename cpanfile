@@ -1,5 +1,5 @@
 requires 'perl' => '5.008001';
-requires 'Starch' => '0.10';
+requires 'Starch' => '0.11';
 requires 'Starch::Store::DBI' => '0.03';
 requires 'DBIx::Connector' => '0.53';
 requires 'strictures' => '2.000000';

@@ -45,7 +45,7 @@
             "DBIx::Connector" : "0.53",
             "Moo" : "2.000000",
             "Scalar::Util" : "0",
-            "Starch" : "0.10",
+            "Starch" : "0.11",
             "Starch::Store::DBI" : "0.03",
             "Type::Tiny" : "1.000005",
             "namespace::clean" : "0.24",

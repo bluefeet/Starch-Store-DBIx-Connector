@@ -143,8 +143,6 @@ sub dbh { $dbh }
 around qw( set get remove ) => sub{
     my ($orig, $self, @args) = @_;
 
-    local $Carp::Interal{ (__PACKAGE__) } = 1;
-
     my $method = $self->method();
     my $mode = $self->mode();
 
